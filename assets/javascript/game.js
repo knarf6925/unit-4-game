@@ -1,5 +1,5 @@
 var win = 0;
-var losses = 0; 
+var loss = 0; 
 var randomResults;
 var previous = 0;
 
@@ -26,18 +26,20 @@ for (var i = 0; i < 4; i++){
         var num = parseInt($(this).attr('dataRandom'));
         previous += num;
 
-        console.log(previous)
+      console.log(previous)
 
         if (previous > randomResults){
 
-            losses++;
+            loss--;
             
-            ("#losses").html(losses);
-        }
+            $("#loss").html(loss);
+            alert("you lose");
+    }   
+
         else if (previous === randomResults){
             
             win++;
-
+            alert("You win")
             $("#win").html(win);
 
         }
