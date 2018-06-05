@@ -4,25 +4,35 @@ var randomResults;
 var previous = 0;
 
 
-randomResults = Math.floor(Math.random() * 69) + 30;
+var resetStart = function () {
 
-$("#result").html('Random Result: ' + randomResults)
-
-for (var i = 0; i < 4; i++){
-    var random = Math.floor(Math.random()* 11) + 1;
+$(".crystals").empty();
 
 
-    var crystal = $("<div>");
-        crystal.attr({
-        "class": 'crystal',
-        "dataRandom": random
+    randomResults = Math.floor(Math.random() * 69) + 30;
+
+    $("#result").html('Random Result: ' + randomResults)
+
+    for (var i = 0; i < 4; i++){
+        var random = Math.floor(Math.random()* 11) + 1;
+
+    
+        var crystal = $("<div>");
+            crystal.attr({
+         "class": 'crystal',
+         "dataRandom": random
     });
 
+        crystal.html(random);
+    
     $(".crystals").append(crystal);
 
+    }
 }
 
-    $(".crystal").on("click", function () {
+resetStart();
+
+    $(document).on("click", ".crystal", function () {
         var num = parseInt($(this).attr('dataRandom'));
         previous += num;
 
@@ -33,15 +43,17 @@ for (var i = 0; i < 4; i++){
             loss--;
             
             $("#loss").html(loss);
-            alert("you lose");
+           resetStart();
+           previous = 0;
     }   
 
         else if (previous === randomResults){
             
             win++;
-            alert("You win")
+           
             $("#win").html(win);
-
+            resetStart();
+            previous = 0;
         }
 
     });
