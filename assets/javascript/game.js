@@ -40,7 +40,7 @@ resetStart();
 
         if (previous > randomResults){
 
-            loss--;
+            loss++;
             
             $("#loss").html(loss);
            resetStart();
