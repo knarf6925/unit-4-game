@@ -8,6 +8,8 @@ var resetStart = function () {
 
 $(".crystals").empty();
 
+var images = ['', '' , '' ,'']
+
 
     randomResults = Math.floor(Math.random() * 69) + 30;
 
@@ -28,6 +30,8 @@ $(".crystals").empty();
     $(".crystals").append(crystal);
 
     }
+
+    $("#previous").html(previous);
 }
 
 resetStart();
@@ -36,7 +40,10 @@ resetStart();
         var num = parseInt($(this).attr('dataRandom'));
         previous += num;
 
-      console.log(previous)
+         $("#previous").html(previous);
+
+
+     console.log(previous)
 
         if (previous > randomResults){
 
@@ -44,7 +51,9 @@ resetStart();
             
             $("#loss").html(loss);
            resetStart();
+             $("#previous").html(previous);
            previous = 0;
+          
     }   
 
         else if (previous === randomResults){
@@ -53,7 +62,10 @@ resetStart();
            
             $("#win").html(win);
             resetStart();
+             $("#previous").html(previous);
             previous = 0;
+
+           
         }
 
     });

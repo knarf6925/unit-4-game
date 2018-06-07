@@ -1,13 +1,15 @@
 h1{ 
     background-color: lightblue;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .crystals{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
+    
 
 
 }
@@ -20,7 +22,7 @@ h1{
 
 .instructions{
     background:lightskyblue;
-    border: 1 px solid black;
+    margin: 10px;
     height: 300px;
     width:  400px;
     text-align: justify;
@@ -31,9 +33,21 @@ h1{
 
 #win {
     background: green;
+    height: 50px;
+    width:  50px;
+    margin: 10px;
 }
 
 #loss {
     background: red;
+    height: 50px;
+    width:  50px;
+    margin: 10px;
+}
 
+#previous {
+    background: lightcoral;
+    height: 50px;
+    width:  50px;
+    margin: 10px;
 }
