@@ -8,7 +8,11 @@ var resetStart = function () {
 
 $(".crystals").empty();
 
-var images = ['', '' , '' ,'']
+var images = [
+              'assets/images/blue-crystal.jpg'
+            , 'assets/images/mag-crystal.jpg'
+            , 'assets/images/red-crystal.jpg'
+            , 'assets/images/yellow-crystal.jpg']
 
 
     randomResults = Math.floor(Math.random() * 69) + 30;
@@ -24,10 +28,18 @@ var images = ['', '' , '' ,'']
          "class": 'crystal',
          "dataRandom": random
     });
+    
 
-        crystal.html(random);
+    crystal.css({
+        "background-image":"url('" + images[i] + "')",
+        "background-size": "cover"
+        
+    })
+
+    
     
     $(".crystals").append(crystal);
+
 
     }
 
@@ -50,9 +62,11 @@ resetStart();
             loss++;
             
             $("#loss").html(loss);
+                 alert("You lose");
            resetStart();
              $("#previous").html(previous);
-           previous = 0;
+            
+             previous = 0;
           
     }   
 
@@ -61,8 +75,10 @@ resetStart();
             win++;
            
             $("#win").html(win);
+            alert("You Win");
             resetStart();
              $("#previous").html(previous);
+           
             previous = 0;
 
            

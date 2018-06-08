@@ -1,7 +1,7 @@
 h1{ 
     background-color: lightblue;
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .crystals{
@@ -10,12 +10,9 @@ h1{
     justify-content: space-around;
     
     
-
-
 }
 
 .crystal{
-    border: 1px solid green;
     height: 200px;
     width: 200px;
 }
